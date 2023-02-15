@@ -1,0 +1,25 @@
+body {
+  background-color: NavajoWhite
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10%
+}
+
+.center_text {
+    text-align: center;
+    font-style: italic;
+    color: rgb(184, 32, 32)
+}
+
+.text_colour{
+    color: DarkMagenta
+}
+
+
+img {
+    border: 3px solid #591111
+}
