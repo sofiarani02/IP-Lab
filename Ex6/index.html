@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Book Colections!!</h1><hr>    
+    <!--Invoke marklist1 servlet to display all the students' marks-->
+    <a href="db1">Display all Books Details</a>
+    <hr>
+    <!-- On submit invoke marklist2 servlet to display mark details of specific dept students-->
+    <h3>View Book Details for specific book</h3>
+    <form action="db2" method="get">
+        <!--Drop down selection-->
+        <label for="bname">Book Name: </label>
+        <select id="bname" name="bname">
+        <option value="empty">--</option>
+        <option value="City of Dragons">City of Dragons</option>
+        <option value="Ship of Magic">Ship of Magic</option>
+        <option value="Dragon Haven">Dragon Haven</option>
+        <br>
+        <br>
+        <input type="submit" value="SUBMIT"/>
+    </form>
+</body>
+</html>
