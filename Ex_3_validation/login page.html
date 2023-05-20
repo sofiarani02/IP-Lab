@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body bgcolor="lightblue">
+
+    <script lang="javascript">
+        function validate(){
+            var flag=1;
+            if(document.myform.id.value=="" || document.myform.pwd.value=="" )
+            {
+                flag=0;
+                alert("username and password cannot be empty");
+            }
+            if(flag==1)
+            {
+                alert("loged in successfully");
+            }
+            else{
+                alert("Invalid Input");
+                document.myform.focus();
+            }
+        }
+    </script>
+    <form name="myform">
+        <table align="center" border="0" cellpadding="12">
+            <tr>
+                <h1 align="center" >Login</h1>
+            </tr>
+            <tr>
+                <td><b>User Name</b></td>
+                <td><input type="text" name="id"></td>
+            </tr>
+            <tr>
+                <td><b>Password</b></td>
+                <td><input type="password" name="pwd"></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <form name="myform" method="post">
+                        <input type="submit" value="Login" onclick="validate()" >
+                        <input type="reset" value="Clear" >
+                    </form>
+                    <span class="psw">Forgot <a href="password.html">password?</a></span>
+                    <p>Not a register user? <a href="signup.html">Sign  Up</a></p>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
+
