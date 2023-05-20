@@ -1,0 +1,178 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        form{
+            width: 750px;
+            border: 5px;
+            border-color: brown;
+            border-style: solid;
+            margin: auto;
+        }
+    </style>
+</head>
+<body bgcolor="bisque">
+    <form name="myform" onsubmit="return validate()" action="success.html">
+            <table class= "table table-responsive" align="center" border="0" cellpadding="12">
+                <tr>
+                    <h1 align="center" >SIGN UP</h1>
+                    <h2 align="center" >BANK REGISTERATION FORM</h2>
+                </tr>
+                <tr>
+                    <td><b>First Name</b></td>
+                    <td><input type="text" name="id1"></td>
+                </tr>
+                <tr>
+                    <td><b>Last Name</b></td>
+                    <td><input type="text" name="id2"></td>
+                </tr>
+                <tr>
+                    <td><b>Gender</b></td>
+                    <td>
+                        <select name="gen" id="gen">
+                            <option value="">--Select--</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </td>   
+                </tr>
+                <tr>
+                    <td><b>Date of Birth</b></td>
+                    <td><input type="date" name="date" id="dob"></input></td>
+                </tr>
+                
+                <tr>
+                    <td ><b>Phone No</b></td>
+                    <td ><input type="text" name="country code"  value="+91" size="2"/>
+                        <input type="phone"></td>
+                </tr>
+
+                <tr>
+                    <td><b>Address </b></td>
+                    <td><textarea name="address" required cols="21" rows="5"></textarea></td>
+                </tr>
+            
+                <tr>
+                    <td><b>Aadhar Card Number </b></td>
+                    <td><input type="text" name="aad" id="aadhar"></td>
+                </tr>
+
+                <tr>
+                    <td><b>Pan Card Number </b></td>
+                    <td><input type="text" name="pan" id="pan" required/></td>
+                </tr>
+
+                <tr>
+                    <td><b>Account Type</b></td>
+                    <td>
+                        <select name="acc" id="acc">
+                            <option value="">--Select a type--</option>
+                            <option value="Saving">Saving</option>
+                            <option value="Current">Current</option>
+                            <option value="Salary">Salary</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </td>   
+                </tr>
+
+                <tr>
+                    <td><b>Email ID</b></td>
+                    <td><input type="email" placeholder="abc@gmail.com" name="email"></td>
+                </tr>
+
+                <tr>
+                    <td><b>Password </b></td>
+                    <td> <input type="password" name="pwd1"></td>
+                </tr>
+                
+                <tr>
+                    <td><b>Retype Password</b></td>
+                    <td><input type="password" name="pwd2"></td>    
+                </tr>
+                <tr>
+                    <td><input type="checkbox" checked="checked" name="remember">Remember me</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" class="registerbtn" value="Sign up" ></input>
+                    </td>
+                    <td><input type="reset"></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <script lang="javascript">
+        function validate(){
+            var aadhar  = document.forms[0]["aadhar"].value;
+            var pan = document.forms[0]["pan"].value;
+            const A = /^\d{12}$/;
+            const P =/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+            
+            if(document.myform.id1.value=="" || document.myform.id2.value=="" || 
+            document.myform.id1.value=="null" || document.myform.id2.value=="null"){
+                alert("Name can't be blank");  
+                return false;
+            }
+
+            else if(document.myform.gen.value=="" ){
+                alert("select gender");  
+                return false;
+            }
+
+            else if(document.myform.dob.value=="" ){
+                alert("select DOB");  
+                return false;
+            }
+
+            else if(document.myform.num.value=="" ){
+                alert("enter phone number");  
+                return false;
+            }
+
+            else if(document.myform.num.value.length <10 ){
+                alert("enter phone number correctly");  
+                return false;
+            }
+            
+            else if (!A.test(aadhar)) {
+                alert("Enter the 12 digit AADHAR Number");
+                return false;
+            }
+
+            else if (!P.test(pan)){
+                alert("Enter the PAN number correctly");
+                return false;
+            }
+
+            else if(document.myform.acc.value=="" ){
+                alert("select account type");  
+                return false;
+            }
+
+            else if(document.myform.pwd1.value=="" || document.myform.pwd2.value==""){
+                alert("enter password");  
+                return false;
+            }
+
+            else if(document.myform.pwd1.value!=document.myform.pwd2.value){
+                alert("retype password correctly");  
+                return false;
+            }
+
+            else if(document.myform.pwd1.value.length < 6){
+                alert("enter password for atleat 6 characters");  
+                return false;
+            }
+
+            else{
+                alert("Signed in successfully");
+                return true;
+            }
+        }
+    </script> 
+</body>
+</html>
