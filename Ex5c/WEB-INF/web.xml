@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+ <servlet>
+    <servlet-name>Hitcount</servlet-name>
+    <servlet-class>login</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+    <servlet-name>Hitcount</servlet-name>
+    <url-pattern>/hitcnt</url-pattern>
+ </servlet-mapping>
+
+  <!-- <servlet>
+    <servlet-name>arr</servlet-name>
+    <servlet-class>ass1</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+    <servlet-name>arr</servlet-name>
+    <url-pattern>/selectedvalue</url-pattern>
+ </servlet-mapping>
+
+   <servlet>
+    <servlet-name>regNo</servlet-name>
+    <servlet-class>ass2</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+    <servlet-name>regNo</servlet-name>
+    <url-pattern>/yourrank</url-pattern>
+ </servlet-mapping>
+
+<servlet>
+<servlet-name>DatabaseAccess</servlet-name>
+   <servlet-class>loassign</servlet-class>
+</servlet>
+ 
+<servlet-mapping>
+   <servlet-name>DatabaseAccess</servlet-name>
+   <url-pattern>/movies</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>DatabaseAccess1</servlet-name>
+   <servlet-class>loassign1</servlet-class>
+</servlet>
+ 
+<servlet-mapping>
+   <servlet-name>DatabaseAccess1</servlet-name>
+   <url-pattern>/comment</url-pattern>
+</servlet-mapping> -->
+
+</web-app>
