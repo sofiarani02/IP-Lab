@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Collection</title>
+  <script>
+    function fetchBookInfo() {
+      var searchValue = document.getElementById("searchInput").value;
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+          displayBookInfo(this, searchValue);
+        }
+      };
+      xhttp.open("GET", "books.xml", true); // Replace "books.xml" with the path to your XML file
+      xhttp.send();
+    }
+
+    function displayBookInfo(xml, searchValue) {
+      var xmlDoc = xml.responseXML;
+      var books = xmlDoc.getElementsByTagName("book");
+
+      var bookInfoContainer = document.getElementById("bookInfoContainer");
+      bookInfoContainer.innerHTML = ""; // Clear previous search results
+
+      // Iterate through each book
+      for (var i = 0; i < books.length; i++) {
+        var book = books[i];
+        var name = book.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+        var author = book.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+        var year = book.getElementsByTagName("year")[0].childNodes[0].nodeValue;
+
+        // If search value matches any attribute, display book info
+        if (name === searchValue || author === searchValue || year === searchValue) {
+        // Create book info elements
+        var bookInfo = document.createElement("div");
+        var bookName = document.createElement("p");
+        var bookauthor = document.createElement("p");
+        var bookyear = document.createElement("p");
+
+        // Set book info content
+        bookName.innerHTML = "Name: " + name;
+        bookauthor.innerHTML = "Author: " + author;
+        bookyear.innerHTML = "Year: " + year;
+
+        // Append book info elements to the container
+        bookInfo.appendChild(bookName);
+        bookInfo.appendChild(bookauthor);
+        bookInfo.appendChild(bookyear);
+        bookInfoContainer.appendChild(bookInfo);
+        }
+      }
+    }
+  </script>
+  <!-- <script src="xmlscript.js"></script> -->
+</head>
+<body bgcolor="ff982d">
+
+
+  <h1>Book Collection!!</h1>
+  <input type="text" id="searchInput" placeholder="Search by name, author, or year" size="25">
+  <button onclick="fetchBookInfo()">Search</button>
+
+  <div id="bookInfoContainer"></div>
+</body>
+</html>
+
+
+

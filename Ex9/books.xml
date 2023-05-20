@@ -1,0 +1,17 @@
+<books>
+  <book>
+    <name>City of Dragons</name>
+    <author>Robin Hobb</author>
+    <year>2011</year>
+  </book>
+  <book>
+    <name>Ship of Magic</name>
+    <author>Robin Hobb</author>
+    <year>1998</year>
+  </book>
+  <book>
+    <name>Dragon Haven</name>
+    <author>Robin Hobb</author>
+    <year>2010</year>
+  </book>
+</books>
