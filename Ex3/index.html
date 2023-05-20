@@ -1,0 +1,117 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+
+    </style>
+</head>
+<body bgcolor="lightgreen">
+    <script lang="javascript">
+        function validate(){
+            
+            if(document.myform.id1.value=="" || document.myform.id2.value=="" || document.myform.id1.value=="null" || document.myform.id2.value=="null"){
+                alert("Name can't be blank");  
+                return false;
+            }
+
+            if(document.myform.gen.value=="" ){
+                alert("select gender");  
+                return false;
+            }
+
+            if(document.myform.num.value=="" ){
+                alert("enter phone number");  
+                return false;
+            }
+
+            if(document.myform.num.value.length <10 ){
+                alert("enter phone number corectly");  
+                return false;
+            }
+
+            if(document.myform.pwd1.value=="" || document.myform.pwd2.value==""){
+                alert("enter password");  
+                return false;
+            }
+
+            if(document.myform.pwd1.value!=document.myform.pwd2.value){
+                alert("retype password correctly");  
+                return false;
+            }
+
+            if(document.myform.pwd1.value.length < 6){
+                alert("enter password for atleat 6 characters");  
+                return false;
+            }
+
+            else{
+                alert("Signed in successfully");
+            }
+        }
+        
+    </script> 
+
+    <form name="myform">
+        <dir style="overflow-x:auto;">
+            <table class= "table table-responsive" align="center" border="0" cellpadding="12">
+                <tr>
+                    <h1 align="center" >Sign Up</h1>
+                    <h3 align="center" >Welcome to book world!!</h3>
+                </tr>
+                <tr>
+                    <td><b>First Name</b></td>
+                    <td><input type="text" name="id1"></td>
+                </tr>
+                <tr>
+                    <td><b>Last Name</b></td>
+                    <td><input type="text" name="id2"></td>
+                </tr>
+
+                <tr>
+                    <td><b>Gender</b></td>
+                    <td>
+                        <select name="gen" id="gen" style="font-size: medium;">
+                            <option></option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </td>   
+                </tr>
+                
+                <tr>
+                    <td><b>Phone Number</b></td>
+                    <td><input type="number" name="num"></td>
+                </tr>
+            
+                <tr>
+                    <td><b>Email ID</b></td>
+                    <td><input type="email" placeholder="abc@gmail.com" name="email"></td>
+                </tr>
+                <tr>
+                    <td><b>Password</b></td>
+                    <td><input type="password" name="pwd1"></td>    
+                </tr>
+                <tr>
+                    <td><b>Retype Password</b></td>
+                    <td><input type="password" name="pwd2"></td>    
+                </tr>
+                <tr>
+                    <td><input type="checkbox" checked="checked" name="remember">Remember me</td>
+                </tr>
+                <tr>
+                    <td>
+                        <form name="myform" method="post">
+                            <button type="submit" class="registerbtn" onclick="validate()">Sign Up</button>
+                        </form>
+                        
+                        <p>Already a member? <a href="login page.html">Login</a></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    
+</body>
+</html>
