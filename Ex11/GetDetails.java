@@ -63,7 +63,7 @@ public class GetDetails {
           
             // Clean-up environment
             rs.close();
-            stmt.close();G
+            stmt.close();
             conn.close();
         }
         catch(Exception e)
