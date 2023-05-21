@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid #333333;
+            margin: 30px auto;
+            width: 80%;
+        }
+        
+        h3 {
+            color: #333333;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        form {
+            display: inline-block;
+        }
+        
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        select {
+            font-size: 14px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 1px solid #cccccc;
+        }
+        
+        input[type="submit"] {
+            font-size: 14px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: none;
+            background-color: #333333;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #555555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Details!!</h1>
+    <hr>    
+    <h3>View Book Details for a specific book</h3>
+    <form action="./fetch" method="post">
+        <!--Drop down selection-->
+        <label for="bname">Book Name:</label>
+        <select id="bname" name="bname">
+            <option value="empty">--</option>
+            <option value="City of Dragons">City of Dragons</option>
+            <option value="Ship of Magic">Ship of Magic</option>
+            <option value="Dragon Haven">Dragon Haven</option>
+        </select>
+        <br><br>
+        <input type="submit" value="SUBMIT"/>
+    </form>
+</body>
+</html>
